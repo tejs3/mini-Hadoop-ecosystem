@@ -1,0 +1,6 @@
+===== yarn node -list =====
+2026-10-15 14:31:49 INFO  DefaultNoHARMFailoverProxyProvider:64 - Connecting to ResourceManager at resourcemanager/10.96.158.157:8032
+Total Nodes:2
+         Node-Id	     Node-State	Node-Http-Address	Number-of-Running-Containers
+nodemanager-dfbcdcdbc-v9fsr:42251	        RUNNING	nodemanager-dfbcdcdbc-v9fsr:8042	                           0
+nodemanager-dfbcdcdbc-dzg7m:39751	        RUNNING	nodemanager-dfbcdcdbc-dzg7m:8042	                           0

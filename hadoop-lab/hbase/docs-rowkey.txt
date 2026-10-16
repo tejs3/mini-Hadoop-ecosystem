@@ -1,0 +1,7 @@
+Row key design for user_logs (anti-hotspot):
+  rowkey = reverse(user_id) + "#" + (Long.MAX_VALUE - timestamp)
+
+Why:
+- Sequential timestamps or monotonically increasing user IDs concentrate writes on one region.
+- Reversing user_id spreads writes across region start keys.
+- Reversed timestamp keeps recent events sortable per user while avoiding time-based hotspotting.
