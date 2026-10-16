@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jobhistory
+  namespace: hadoop
+spec:
+  selector:
+    app: jobhistory
+  ports:
+    - name: rpc
+      port: 10020
+      targetPort: 10020
+    - name: web
+      port: 19888
+      targetPort: 19888
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jobhistory
+  namespace: hadoop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jobhistory
+  template:
+    metadata:
+      labels:
+        app: jobhistory
+    spec:
+      containers:
+        - name: jobhistory
+          image: apache/hadoop:3.3.6
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/bash", "-lc"]
+          args: ["exec mapred historyserver"]
+          ports:
+            - containerPort: 10020
+            - containerPort: 19888
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+          volumeMounts:
+            - name: config
+              mountPath: /opt/hadoop/etc/hadoop/core-site.xml
+              subPath: core-site.xml
+            - name: config
+              mountPath: /opt/hadoop/etc/hadoop/hdfs-site.xml
+              subPath: hdfs-site.xml
+            - name: config
+              mountPath: /opt/hadoop/etc/hadoop/yarn-site.xml
+              subPath: yarn-site.xml
+            - name: config
+              mountPath: /opt/hadoop/etc/hadoop/mapred-site.xml
+              subPath: mapred-site.xml
+            - name: config
+              mountPath: /opt/hadoop/etc/hadoop/capacity-scheduler.xml
+              subPath: capacity-scheduler.xml
+      volumes:
+        - name: config
+          configMap:
+            name: yarn-config

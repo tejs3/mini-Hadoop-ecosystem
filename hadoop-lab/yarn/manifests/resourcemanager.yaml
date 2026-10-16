@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: resourcemanager
+  namespace: hadoop
+spec:
+  selector:
+    app: resourcemanager
+  ports:
+    - name: client
+      port: 8032
+      targetPort: 8032
+    - name: scheduler
+      port: 8030
+      targetPort: 8030
+    - name: tracker
+      port: 8031
+      targetPort: 8031
+    - name: web
+      port: 8088
+      targetPort: 8088
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resourcemanager
+  namespace: hadoop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: resourcemanager
+  template:
+    metadata:
+      labels:
+        app: resourcemanager
+    spec:
+      containers:
+        - name: resourcemanager
+          image: apache/hadoop:3.3.6
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/bash", "-lc"]
+          args: ["exec yarn resourcemanager"]
+          ports:
+            - containerPort: 8032
+            - containerPort: 8030
+            - containerPort: 8031
+            - containerPort: 8088
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "2Gi"
+              cpu: "1"
+          volumeMounts:
+            - name: config
+              mountPath: /opt/hadoop/etc/hadoop/core-site.xml
+              subPath: core-site.xml
+            - name: config
+              mountPath: /opt/hadoop/etc/hadoop/hdfs-site.xml
+              subPath: hdfs-site.xml
+            - name: config
+              mountPath: /opt/hadoop/etc/hadoop/yarn-site.xml
+              subPath: yarn-site.xml
+            - name: config
+              mountPath: /opt/hadoop/etc/hadoop/mapred-site.xml
+              subPath: mapred-site.xml
+            - name: config
+              mountPath: /opt/hadoop/etc/hadoop/capacity-scheduler.xml
+              subPath: capacity-scheduler.xml
+      volumes:
+        - name: config
+          configMap:
+            name: yarn-config
