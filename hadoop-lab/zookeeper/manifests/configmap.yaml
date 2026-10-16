@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: zk-config
+  namespace: hadoop
+data:
+  zoo.cfg: |
+    tickTime=2000
+    initLimit=10
+    syncLimit=5
+    dataDir=/data
+    dataLogDir=/datalog
+    clientPort=2181
+    maxClientCnxns=60
+    autopurge.snapRetainCount=3
+    autopurge.purgeInterval=1
+    4lw.commands.whitelist=*
+    standaloneEnabled=false
+    admin.enableServer=true
+    server.1=zk-0.zk-hs.hadoop.svc.cluster.local:2888:3888
+    server.2=zk-1.zk-hs.hadoop.svc.cluster.local:2888:3888
+    server.3=zk-2.zk-hs.hadoop.svc.cluster.local:2888:3888

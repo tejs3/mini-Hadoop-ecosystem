@@ -1,0 +1,8 @@
+# time-range last 7 days
+q=*:*&fq=timestamp:[NOW-7DAYS TO NOW]
+
+# full-text on message
+q=message:error&defType=edismax&qf=message
+
+# facet by level
+q=*:*&facet=true&facet.field=level&rows=0

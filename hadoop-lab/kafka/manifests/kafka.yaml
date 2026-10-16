@@ -1,0 +1,117 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-hs
+  namespace: hadoop
+spec:
+  clusterIP: None
+  publishNotReadyAddresses: true
+  selector:
+    app: kafka
+  ports:
+    - name: broker
+      port: 9092
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka
+  namespace: hadoop
+spec:
+  selector:
+    app: kafka
+  ports:
+    - name: broker
+      port: 9092
+      targetPort: 9092
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: kafka
+  namespace: hadoop
+spec:
+  serviceName: kafka-hs
+  replicas: 3
+  podManagementPolicy: Parallel
+  selector:
+    matchLabels:
+      app: kafka
+  template:
+    metadata:
+      labels:
+        app: kafka
+    spec:
+      containers:
+        - name: kafka
+          image: apache/kafka:3.9.1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9092
+              name: broker
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: BROKER_ID
+              value: ""
+          command:
+            - bash
+            - -lc
+            - |
+              set -e
+              ORDINAL=${HOSTNAME##*-}
+              export BROKER_ID=$ORDINAL
+              mkdir -p /var/lib/kafka/data /tmp/kafkaconf
+              # Render config from template
+              sed -e "s/\${BROKER_ID}/${BROKER_ID}/g" \
+                  -e "s/\${POD_NAME}/${POD_NAME}/g" \
+                  /config/server.properties.tpl > /tmp/kafkaconf/server.properties
+              echo "==== Kafka broker ${BROKER_ID} config ===="
+              cat /tmp/kafkaconf/server.properties
+              # Wait for ZooKeeper quorum
+              for i in $(seq 1 60); do
+                if echo ruok | nc -w 2 zk-0.zk-hs.hadoop.svc.cluster.local 2181 2>/dev/null | grep -q imok; then
+                  echo "ZooKeeper is ready"
+                  break
+                fi
+                echo "Waiting for ZooKeeper... ($i)"
+                sleep 5
+              done
+              # Prefer classic ZK start scripts shipped in image
+              if [ -x /opt/kafka/bin/kafka-server-start.sh ]; then
+                KBIN=/opt/kafka/bin
+              elif [ -x /usr/bin/kafka-server-start.sh ]; then
+                KBIN=/usr/bin
+              else
+                KBIN=$(dirname $(find / -name kafka-server-start.sh 2>/dev/null | head -1))
+              fi
+              echo "Using Kafka bin: $KBIN"
+              # Force non-KRaft: ensure no meta.properties kraft
+              rm -f /var/lib/kafka/data/meta.properties || true
+              exec "$KBIN/kafka-server-start.sh" /tmp/kafkaconf/server.properties
+          volumeMounts:
+            - name: config
+              mountPath: /config
+            - name: data
+              mountPath: /var/lib/kafka/data
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "200m"
+            limits:
+              memory: "1536Mi"
+              cpu: "1"
+      volumes:
+        - name: config
+          configMap:
+            name: kafka-config
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 5Gi
