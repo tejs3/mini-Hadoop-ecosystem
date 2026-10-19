@@ -143,8 +143,4 @@ Expected: 1 NameNode, 3 DataNodes, 1 ResourceManager, 2 NodeManagers, 3 ZooKeepe
 
 The taxi parquet files stayed on the VM at `/opt/hadoop-lab/hdfs/data/`. February through June are each over 100 MB, which GitHub rejects. [hadoop-lab/hdfs/data/README.md](hadoop-lab/hdfs/data/README.md) names the files. January is truncated and was not loaded.
 
-## Troubleshooting
 
-Problems hit while building and running this cluster, and how each one was fixed, are in [TROUBLESHOOTING.md](TROUBLESHOOTING.md). That list includes the Solr crash on start, the ResourceManager OOM, HDFS replication, and the hbck2 classpath error.
-
-Part 8 is a separate written exercise. It is [08-troubleshooting/Part8-Troubleshooting.docx](08-troubleshooting/Part8-Troubleshooting.docx), not the same file as `TROUBLESHOOTING.md`.
