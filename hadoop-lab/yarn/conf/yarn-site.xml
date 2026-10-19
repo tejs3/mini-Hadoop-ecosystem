@@ -106,5 +106,21 @@
     <name>yarn.resourcemanager.monitor.capacity.preemption.max_wait_before_kill</name>
     <value>15000</value>
   </property>
+  <property>
+    <name>yarn.resourcemanager.monitor.capacity.preemption.total_preemption_per_round</name>
+    <value>0.8</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.monitor.capacity.preemption.select_based_on_reserved_containers</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.monitor.capacity.preemption.natural_termination_factor</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.monitor.capacity.preemption.max_ignored_over_capacity</name>
+    <value>0</value>
+  </property>
 
 </configuration>

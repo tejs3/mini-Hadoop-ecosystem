@@ -68,6 +68,14 @@
     <name>yarn.scheduler.capacity.root.development.disable_preemption</name>
     <value>false</value>
   </property>
+  <property>
+    <name>yarn.scheduler.capacity.root.development.user-limit-factor</name>
+    <value>2.5</value>
+  </property>
+  <property>
+    <name>yarn.scheduler.capacity.root.production.user-limit-factor</name>
+    <value>2</value>
+  </property>
 
   <!-- enable preemption -->
   <property>

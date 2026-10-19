@@ -1,0 +1,77 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: datanode
+  namespace: hadoop
+spec:
+  clusterIP: None
+  selector:
+    app: datanode
+  ports:
+    - name: data
+      port: 9866
+      targetPort: 9866
+    - name: http
+      port: 9864
+      targetPort: 9864
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: datanode
+  namespace: hadoop
+spec:
+  serviceName: datanode
+  replicas: 2
+  selector:
+    matchLabels:
+      app: datanode
+  template:
+    metadata:
+      labels:
+        app: datanode
+    spec:
+      containers:
+        - name: datanode
+          image: apache/hadoop:3.3.6
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/bash","-lc"]
+          args:
+            - |
+              echo "Waiting for NameNode..."
+              until hdfs dfs -ls hdfs://namenode:9000/ >/dev/null 2>&1; do sleep 3; done
+              exec hdfs datanode
+          ports:
+            - containerPort: 9866
+            - containerPort: 9864
+          volumeMounts:
+            - name: hdfs-config
+              mountPath: /opt/hadoop/etc/hadoop/core-site.xml
+              subPath: core-site.xml
+            - name: hdfs-config2
+              mountPath: /opt/hadoop/etc/hadoop/hdfs-site.xml
+              subPath: hdfs-site.xml
+            - name: datanode-data
+              mountPath: /tmp/hadoop-root/dfs/data
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "500m"
+            limits:
+              memory: "2Gi"
+              cpu: "1"
+      volumes:
+        - name: hdfs-config
+          configMap:
+            name: hdfs-config
+        - name: hdfs-config2
+          configMap:
+            name: hdfs-config
+  volumeClaimTemplates:
+    - metadata:
+        name: datanode-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 10Gi

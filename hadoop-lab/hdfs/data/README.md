@@ -6,3 +6,5 @@
 **Total size:** ~624 MB (over the 500 MB requirement)
 
 Next step (on the lab VM): copy these files up, then upload into HDFS.
+
+The parquet files themselves are on the VM at `/opt/hadoop-lab/hdfs/data/`. They are not in git. February through June are each larger than GitHub's 100 MB file limit. January is truncated and was not used by Spark.
