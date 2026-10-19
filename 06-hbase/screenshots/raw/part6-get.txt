@@ -1,0 +1,16 @@
+hbase:001:0> get "user_logs", "00|00000000|8299999999999"
+COLUMN  CELL
+ info:amount timestamp=2026-10-18T15:38:32.452, value=0.00
+ info:event_type timestamp=2026-10-18T15:38:32.452, value=pickup
+ info:ts timestamp=2026-10-18T15:38:32.452, value=1700000000000
+ info:user_id timestamp=2026-10-18T15:38:32.452, value=0
+1 row(s)
+Took 3.8520 seconds
+hbase:002:0> 
+HBase Shell
+Use "help" to get list of supported commands.
+Use "exit" to quit this interactive shell.
+For Reference, please visit: http://hbase.apache.org/2.0/book.html#shell
+Version 2.6.5, r0255064e5ed1b34c55a5392cd65829fac7a7ab1f, Sun Mar 15 15:40:55 PDT 2026
+Took 0.0193 seconds
+hbase:001:0> 

@@ -1,0 +1,8 @@
+
+GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+app-events-lag  app-events      5          15980           19176           3196            -               -               -
+app-events-lag  app-events      4          17090           20508           3418            -               -               -
+app-events-lag  app-events      3          17200           20640           3440            -               -               -
+app-events-lag  app-events      2          16530           19836           3306            -               -               -
+app-events-lag  app-events      1          16210           19452           3242            -               -               -
+app-events-lag  app-events      0          16990           20388           3398            -               -               -

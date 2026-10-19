@@ -1,0 +1,2 @@
+idle read=0 lag=100000 per_partition={0: 16990, 3: 17200, 2: 16530, 5: 15980, 1: 16210, 4: 17090}
+RESULT group=app-events-lag read=0 seconds=3.8

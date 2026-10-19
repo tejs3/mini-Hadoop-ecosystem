@@ -1,0 +1,109 @@
+hbase:001:0> # Part 6. Load 1,000,000 rows into user_logs.
+hbase:002:0> # Run with:  hbase shell load_user_logs.rb
+hbase:003:0> # The shell wrapper copies this file onto hbase-master and runs it.
+hbase:004:0> #
+hbase:005:0> # Row key matches create_user_logs.sh:
+hbase:006:0> #   salt = user_id % 10, then user id, then reverse timestamp.
+hbase:007:0> # Writes go through a BufferedMutator so they are batched.
+hbase:008:0> # WAL stays on. This is one client on the master, which is enough
+hbase:009:0> # for a million short rows and does not need a YARN MapReduce config
+hbase:010:0> # on the HBase pod.
+hbase:011:0> 
+hbase:012:0> require 'java'
+=> false
+hbase:013:0> 
+hbase:014:0> java_import 'org.apache.hadoop.hbase.HBaseConfiguration'
+=> [Java::OrgApacheHadoopHbase::HBaseConfiguration]
+hbase:015:0> java_import 'org.apache.hadoop.hbase.client.ConnectionFactory'
+=> [Java::OrgApacheHadoopHbaseClient::ConnectionFactory]
+hbase:016:0> java_import 'org.apache.hadoop.hbase.client.Put'
+=> [Java::OrgApacheHadoopHbaseClient::Put]
+hbase:017:0> java_import 'org.apache.hadoop.hbase.client.BufferedMutatorParams'
+=> [Java::OrgApacheHadoopHbaseClient::BufferedMutatorParams]
+hbase:018:0> java_import 'org.apache.hadoop.hbase.TableName'
+=> [Java::OrgApacheHadoopHbase::TableName]
+hbase:019:0> java_import 'org.apache.hadoop.hbase.util.Bytes'
+=> [Java::OrgApacheHadoopHbaseUtil::Bytes]
+hbase:020:0> 
+hbase:021:0> ROWS = 1_000_000
+=> 1000000
+hbase:022:0> BASE_TS = 1_700_000_000_000
+=> 1700000000000
+hbase:023:0> TYPES = %w[pickup dropoff payment cancel rating]
+=> ["pickup", "dropoff", "payment", "cancel", "rating"]
+hbase:024:0> CF = Bytes.toBytes('info')
+=> #<Java::byte[4]: [105, 110, 102, 111]>
+hbase:025:0> 
+hbase:026:0> conf = HBaseConfiguration.create
+=> #<Java::OrgApacheHadoopConf::Configuration:0x47994b51>
+hbase:027:0> conn = ConnectionFactory.createConnection(conf)
+=> #<Java::OrgApacheHadoopHbaseClient::ConnectionImplementation:0x21dd9203>
+hbase:028:0> params = BufferedMutatorParams.new(TableName.valueOf('user_logs'))
+=> #<Java::OrgApacheHadoopHbaseClient::BufferedMutatorParams:0xc478e4e>
+hbase:029:0> params.writeBufferSize(8 * 1024 * 1024)
+=> #<Java::OrgApacheHadoopHbaseClient::BufferedMutatorParams:0xc478e4e>
+hbase:030:0> mutator = conn.getBufferedMutator(params)
+=> #<Java::OrgApacheHadoopHbaseClient::BufferedMutatorImpl:0x71e409f>
+hbase:031:0> 
+hbase:032:0> begin
+  ROWS.times do |i|
+hbase:034:2*     user_id = i % 50_000
+    salt = user_id % 10
+    ts = BASE_TS + i
+    rev = 9_999_999_999_999 - ts
+    row_key = format('%02d|%08d|%013d', salt, user_id, rev)
+    amount = format('%.2f', (i % 5000) / 100.0)
+
+    put = Put.new(Bytes.toBytes(row_key))
+    put.addColumn(CF, Bytes.toBytes('user_id'), Bytes.toBytes(user_id.to_s))
+    put.addColumn(CF, Bytes.toBytes('event_type'), Bytes.toBytes(TYPES[i % TYPES.length]))
+    put.addColumn(CF, Bytes.toBytes('ts'), Bytes.toBytes(ts.to_s))
+    put.addColumn(CF, Bytes.toBytes('amount'), Bytes.toBytes(amount))
+    mutator.mutate(put)
+
+    if i > 0 && (i % 100_000).zero?
+      mutator.flush
+      puts format('flushed %d', i)
+    end
+  end
+  mutator.flush
+  puts format('RESULT loaded=%d table=user_logs', ROWS)
+ensure
+hbase:056:1*   mutator.close
+  conn.close
+end
+flushed 100000
+flushed 200000
+flushed 300000
+flushed 400000
+flushed 500000
+flushed 600000
+flushed 700000
+flushed 800000
+flushed 900000
+RESULT loaded=1000000 table=user_logs
+hbase:059:0> 
+HBase Shell
+Use "help" to get list of supported commands.
+Use "exit" to quit this interactive shell.
+For Reference, please visit: http://hbase.apache.org/2.0/book.html#shell
+Version 2.6.5, r0255064e5ed1b34c55a5392cd65829fac7a7ab1f, Sun Mar 15 15:40:55 PDT 2026
+Took 0.0325 seconds
+hbase:001:0> 
+Row count (this scans the table):
+HBase Shell
+Use "help" to get list of supported commands.
+Use "exit" to quit this interactive shell.
+For Reference, please visit: http://hbase.apache.org/2.0/book.html#shell
+Version 2.6.5, r0255064e5ed1b34c55a5392cd65829fac7a7ab1f, Sun Mar 15 15:40:55 PDT 2026
+Took 0.0132 seconds
+hbase:001:0> count 'user_logs', INTERVAL => 200000
+Current count: 200000, row: 01|00049991|8299999950008
+Current count: 400000, row: 03|00049993|8299999950006
+Current count: 600000, row: 05|00049995|8299999950004
+Current count: 800000, row: 07|00049997|8299999950002
+Current count: 1000000, row: 09|00049999|8299999950000
+1000000 row(s)
+Took 53.5078 seconds
+=> 1000000
+hbase:002:0> 

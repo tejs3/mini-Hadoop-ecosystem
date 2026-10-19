@@ -1,0 +1,35 @@
+hbase:001:0> status
+1 active master, 0 backup masters, 2 servers, 0 dead, 6.0000 average load
+Took 3.5900 seconds
+hbase:002:0> describe "user_logs"
+Table user_logs is ENABLED
+user_logs, {TABLE_ATTRIBUTES => {METADATA => {'hbase.store.file-tracker.impl' => 'DEFAULT'}}}
+COLUMN FAMILIES DESCRIPTION
+{NAME => 'info', INDEX_BLOCK_ENCODING => 'NONE', VERSIONS => '1', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'ROW', IN_MEMORY => 'false', COMPRESSION => 'NONE', BLOCKCACHE => 'true', BLOCKSIZE => '65536 B (64KB)'}
+
+1 row(s)
+Quota is disabled
+Took 0.7599 seconds
+hbase:003:0> list_regions "user_logs"
+                                                      SERVER_NAME |                                                   REGION_NAME |  START_KEY |    END_KEY |  SIZE |    REQ |   LOCALITY |
+ ---------------------------------------------------------------- | ------------------------------------------------------------- | ---------- | ---------- | ----- | ------ | ---------- |
+ hbase-rs-0.hbase-rs.hadoop.svc.cluster.local,16020,1792074803150 |    user_logs,,1792337801853.d6b3b133a15a8f6bb4843ed87b16e562. |            |        01| |    24 | 200000 |        0.0 |
+ hbase-rs-0.hbase-rs.hadoop.svc.cluster.local,16020,1792074803150 | user_logs,01|,1792337801853.e3dbd15212c4820d2aaf34d056677a1c. |        01| |        02| |    24 | 200000 |        0.0 |
+ hbase-rs-1.hbase-rs.hadoop.svc.cluster.local,16020,1792074805411 | user_logs,02|,1792337801853.90a76e722d59709b441545f26655f9bb. |        02| |        03| |    24 | 200000 |        0.0 |
+ hbase-rs-1.hbase-rs.hadoop.svc.cluster.local,16020,1792074805411 | user_logs,03|,1792337801853.f112e60302be0b983e129bc093f21f33. |        03| |        04| |    24 | 200000 |        0.0 |
+ hbase-rs-0.hbase-rs.hadoop.svc.cluster.local,16020,1792074803150 | user_logs,04|,1792337801853.a01b3f47ae2c1bbb70b6f5535f8e6eed. |        04| |        05| |    24 | 200000 |        0.0 |
+ hbase-rs-0.hbase-rs.hadoop.svc.cluster.local,16020,1792074803150 | user_logs,05|,1792337801853.e9df73de3521dd93a3bcabb44338ec84. |        05| |        06| |    24 | 200000 |        0.0 |
+ hbase-rs-1.hbase-rs.hadoop.svc.cluster.local,16020,1792074805411 | user_logs,06|,1792337801853.34cc2960ad21cb5f7cdc42ead0a23e32. |        06| |        07| |    24 | 200000 |        0.0 |
+ hbase-rs-0.hbase-rs.hadoop.svc.cluster.local,16020,1792074803150 | user_logs,07|,1792337801853.92e9f733f2742f4ebbdd01a760c7e287. |        07| |        08| |    24 | 200000 |        0.0 |
+ hbase-rs-1.hbase-rs.hadoop.svc.cluster.local,16020,1792074805411 | user_logs,08|,1792337801853.c12b94bd2b733b52516b871119176fb3. |        08| |        09| |    24 | 200000 |        0.0 |
+ hbase-rs-1.hbase-rs.hadoop.svc.cluster.local,16020,1792074805411 | user_logs,09|,1792337801853.9a7fc7b6b720c7c2c7014888420a7a41. |        09| |            |    24 | 200000 |        0.0 |
+ 10 rows
+Took 0.6980 seconds
+hbase:004:0> 
+HBase Shell
+Use "help" to get list of supported commands.
+Use "exit" to quit this interactive shell.
+For Reference, please visit: http://hbase.apache.org/2.0/book.html#shell
+Version 2.6.5, r0255064e5ed1b34c55a5392cd65829fac7a7ab1f, Sun Mar 15 15:40:55 PDT 2026
+Took 0.0537 seconds
+hbase:001:0> 

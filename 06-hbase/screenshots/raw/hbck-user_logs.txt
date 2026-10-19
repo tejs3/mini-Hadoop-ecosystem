@@ -1,0 +1,102 @@
+===== filesystem default:user_logs =====
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/hbase/lib/client-facing-thirdparty/log4j-slf4j-impl-2.25.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/tmp/hbase-hbck2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+2026-10-18T15:54:38,664 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2026-10-18T15:54:39,974 INFO  [main] Configuration.deprecation: hbase.client.pause.cqtbe is deprecated. Instead, use hbase.client.pause.server.overloaded
+2026-10-18T15:54:40,929 INFO  [main] common.X509Util: Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+2026-10-18T15:54:40,940 WARN  [main] client.ZKConnectionRegistry: ZKConnectionRegistry is deprecated. See https://hbase.apache.org/book.html#client.rpcconnectionregistry
+2026-10-18T15:54:41,061 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:zookeeper.version=3.8.6-6df26081269769c160c8c3a24929c60c91cd19c3, built on 2026-01-28 20:28 UTC
+2026-10-18T15:54:41,062 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:host.name=hbase-master-77c899f866-545d5
+2026-10-18T15:54:41,063 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:java.version=11.0.29
+2026-10-18T15:54:41,063 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:java.vendor=BiSheng
+2026-10-18T15:54:41,063 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:java.home=/usr/lib/jvm/java-11-openjdk-11.0.29.7-1.oe2403sp3.x86_64
+2026-10-18T15:54:41,064 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: hbase/bin/../lib/shaded-clients/hbase-shaded-client-2.6.5.jar:/usr/local/hbase/bin/../lib/jdk11/FastInfoset-1.2.18.jar:/usr/local/hbase/bin/../lib/jdk11/ha-api-3.1.13.jar:/usr/local/hbase/bin/../lib/jdk11/jakarta.activation-api-1.2.2.jar:/usr/local/hbase/bin/../lib/jdk11/jakarta.annotation-api-1.3.5.jar:/usr/local/hbase/bin/../lib/jdk11/jakarta.jws-api-2.1.0.jar:/usr/local/hbase/bin/../lib/jdk11/jakarta.xml.bind-api-2.3.3.jar:/usr/local/hbase/bin/../lib/jdk11/jakarta.xml.soap-api-1.4.2.jar:/usr/local/hbase/bin/../lib/jdk11/jakarta.xml.ws-api-2.3.3.jar:/usr/local/hbase/bin/../lib/jdk11/javax.activation-1.2.0.jar:/usr/local/hbase/bin/../lib/jdk11/jaxws-rt-2.3.7.jar:/usr/local/hbase/bin/../lib/jdk11/management-api-3.2.3.jar:/usr/local/hbase/bin/../lib/jdk11/mimepull-1.9.15.jar:/usr/local/hbase/bin/../lib/jdk11/policy-2.7.10.jar:/usr/local/hbase/bin/../lib/jdk11/saaj-impl-1.5.3.jar:/usr/local/hbase/bin/../lib/jdk11/stax-ex-1.8.3.jar:/usr/local/hbase/bin/../lib/jdk11/streambuffer-1.5.10.jar
+2026-10-18T15:54:41,064 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:java.library.path=/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib
+2026-10-18T15:54:41,065 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:java.io.tmpdir=/tmp
+2026-10-18T15:54:41,065 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:java.compiler=<NA>
+2026-10-18T15:54:41,065 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:os.name=Linux
+2026-10-18T15:54:41,066 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:os.arch=amd64
+2026-10-18T15:54:41,066 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:os.version=5.14.0-687.5.3.el9_8.x86_64
+2026-10-18T15:54:41,067 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:user.name=root
+2026-10-18T15:54:41,067 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:user.home=/root
+2026-10-18T15:54:41,067 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:user.dir=/
+2026-10-18T15:54:41,068 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:os.memory.free=17MB
+2026-10-18T15:54:41,068 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:os.memory.max=384MB
+2026-10-18T15:54:41,068 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Client environment:os.memory.total=39MB
+2026-10-18T15:54:41,119 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ZooKeeper: Initiating client connection, connectString=zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181 sessionTimeout=90000 watcher=org.apache.hadoop.hbase.zookeeper.ReadOnlyZKClient$$Lambda$168/0x00000008401e4c40@3ec61ac9
+2026-10-18T15:54:41,177 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ClientCnxnSocket: jute.maxbuffer value is 1048575 Bytes
+2026-10-18T15:54:41,214 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd] zookeeper.ClientCnxn: zookeeper.request.timeout value is 0. feature enabled=false
+2026-10-18T15:54:41,262 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd-SendThread(zk-2.zk-hs.hadoop.svc.cluster.local:2181) {myid=zk-2.zk-hs.hadoop.svc.cluster.local:2181}] zookeeper.ClientCnxn: Opening socket connection to server zk-2.zk-hs.hadoop.svc.cluster.local/10.244.1.21:2181.
+2026-10-18T15:54:41,274 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd-SendThread(zk-2.zk-hs.hadoop.svc.cluster.local:2181) {myid=zk-2.zk-hs.hadoop.svc.cluster.local:2181}] zookeeper.ClientCnxn: SASL config status: Will not attempt to authenticate using SASL (unknown error)
+2026-10-18T15:54:41,322 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd-SendThread(zk-2.zk-hs.hadoop.svc.cluster.local:2181) {myid=zk-2.zk-hs.hadoop.svc.cluster.local:2181}] zookeeper.ClientCnxn: Socket connection established, initiating session, client: /10.244.2.32:52774, server: zk-2.zk-hs.hadoop.svc.cluster.local/10.244.1.21:2181
+2026-10-18T15:54:41,389 INFO  [ReadOnlyZKClient-zk-0.zk-hs.hadoop.svc.cluster.local:2181,zk-1.zk-hs.hadoop.svc.cluster.local:2181,zk-2.zk-hs.hadoop.svc.cluster.local:2181@0x61c9c3fd-SendThread(zk-2.zk-hs.hadoop.svc.cluster.local:2181) {myid=zk-2.zk-hs.hadoop.svc.cluster.local:2181}] zookeeper.ClientCnxn: Session establishment complete on server zk-2.zk-hs.hadoop.svc.cluster.local/10.244.1.21:2181, session id = 0x3000999c17f000c, negotiated timeout = 40000
+2026-10-18T15:54:45,466 INFO  [main] client.ConnectionImplementation: Closing master protocol: MasterService
+Exception in thread "main" org.apache.hadoop.fs.UnsupportedFileSystemException: No FileSystem for scheme "hdfs"
+	at org.apache.hadoop.fs.FileSystem.getFileSystemClass(FileSystem.java:3239)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3259)
+	at org.apache.hadoop.fs.FileSystem.access$200(FileSystem.java:121)
+	at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3310)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3278)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:475)
+	at org.apache.hadoop.fs.Path.getFileSystem(Path.java:356)
+	at org.apache.hadoop.hbase.util.CommonFSUtils.getRootDir(CommonFSUtils.java:321)
+	at org.apache.hbase.FileSystemFsck.<init>(FileSystemFsck.java:44)
+	at org.apache.hbase.HBCK2.doCommandLine(HBCK2.java:1258)
+	at org.apache.hbase.HBCK2.run(HBCK2.java:1164)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:90)
+	at org.apache.hbase.HBCK2.main(HBCK2.java:1561)
+command terminated with exit code 1
+===== reportMissingRegionsInMeta default:user_logs =====
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/hbase/lib/client-facing-thirdparty/log4j-slf4j-impl-2.25.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/tmp/hbase-hbck2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+2026-10-18T15:54:52,565 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2026-10-18T15:54:52,883 ERROR [main] hbase.HBCK2: Error reporting missing regions: 
+org.apache.hadoop.fs.UnsupportedFileSystemException: No FileSystem for scheme "hdfs"
+	at org.apache.hadoop.fs.FileSystem.getFileSystemClass(FileSystem.java:3239)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3259)
+	at org.apache.hadoop.fs.FileSystem.access$200(FileSystem.java:121)
+	at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3310)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3278)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:475)
+	at org.apache.hadoop.fs.Path.getFileSystem(Path.java:356)
+	at org.apache.hbase.HBCKFsUtils.getRootDir(HBCKFsUtils.java:94)
+	at org.apache.hbase.FsRegionsMetaRecoverer.<init>(FsRegionsMetaRecoverer.java:64)
+	at org.apache.hbase.HBCK2.reportTablesWithMissingRegionsInMeta(HBCK2.java:323)
+	at org.apache.hbase.HBCK2.doCommandLine(HBCK2.java:1331)
+	at org.apache.hbase.HBCK2.run(HBCK2.java:1164)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:90)
+	at org.apache.hbase.HBCK2.main(HBCK2.java:1561)
+command terminated with exit code 1
+===== extraRegionsInMeta default:user_logs =====
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/hbase/lib/client-facing-thirdparty/log4j-slf4j-impl-2.25.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/tmp/hbase-hbck2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+2026-10-18T15:54:58,720 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2026-10-18T15:54:59,062 ERROR [main] hbase.HBCK2: Error on checking extra regions: 
+org.apache.hadoop.fs.UnsupportedFileSystemException: No FileSystem for scheme "hdfs"
+	at org.apache.hadoop.fs.FileSystem.getFileSystemClass(FileSystem.java:3239)
+	at org.apache.hadoop.fs.FileSystem.createFileSystem(FileSystem.java:3259)
+	at org.apache.hadoop.fs.FileSystem.access$200(FileSystem.java:121)
+	at org.apache.hadoop.fs.FileSystem$Cache.getInternal(FileSystem.java:3310)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3278)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:475)
+	at org.apache.hadoop.fs.Path.getFileSystem(Path.java:356)
+	at org.apache.hbase.HBCKFsUtils.getRootDir(HBCKFsUtils.java:94)
+	at org.apache.hbase.FsRegionsMetaRecoverer.<init>(FsRegionsMetaRecoverer.java:64)
+	at org.apache.hbase.HBCK2.extraRegionsInMeta(HBCK2.java:351)
+	at org.apache.hbase.HBCK2.doCommandLine(HBCK2.java:1340)
+	at org.apache.hbase.HBCK2.run(HBCK2.java:1164)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:90)
+	at org.apache.hbase.HBCK2.main(HBCK2.java:1561)
+command terminated with exit code 1

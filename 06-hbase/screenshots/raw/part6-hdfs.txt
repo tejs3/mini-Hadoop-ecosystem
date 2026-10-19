@@ -1,0 +1,42 @@
+Found 11 items
+drwxr-xr-x   - root supergroup          0 2026-10-18 15:36 /hbase/data/default/user_logs/.tabledesc
+drwxr-xr-x   - root supergroup          0 2026-10-18 15:40 /hbase/data/default/user_logs/34cc2960ad21cb5f7cdc42ead0a23e32
+drwxr-xr-x   - root supergroup          0 2026-10-18 15:39 /hbase/data/default/user_logs/90a76e722d59709b441545f26655f9bb
+drwxr-xr-x   - root supergroup          0 2026-10-18 16:43 /hbase/data/default/user_logs/92e9f733f2742f4ebbdd01a760c7e287
+drwxr-xr-x   - root supergroup          0 2026-10-18 15:40 /hbase/data/default/user_logs/9a7fc7b6b720c7c2c7014888420a7a41
+drwxr-xr-x   - root supergroup          0 2026-10-18 15:41 /hbase/data/default/user_logs/a01b3f47ae2c1bbb70b6f5535f8e6eed
+drwxr-xr-x   - root supergroup          0 2026-10-18 15:40 /hbase/data/default/user_logs/c12b94bd2b733b52516b871119176fb3
+drwxr-xr-x   - root supergroup          0 2026-10-18 15:39 /hbase/data/default/user_logs/d6b3b133a15a8f6bb4843ed87b16e562
+drwxr-xr-x   - root supergroup          0 2026-10-18 15:40 /hbase/data/default/user_logs/e3dbd15212c4820d2aaf34d056677a1c
+drwxr-xr-x   - root supergroup          0 2026-10-18 15:40 /hbase/data/default/user_logs/e9df73de3521dd93a3bcabb44338ec84
+drwxr-xr-x   - root supergroup          0 2026-10-18 15:39 /hbase/data/default/user_logs/f112e60302be0b983e129bc093f21f33
+---- STORES ----
+== /hbase/data/default/user_logs/34cc2960ad21cb5f7cdc42ead0a23e32/info ==
+-rw-r--r--   2 root supergroup   20187365 2026-10-18 15:49 /hbase/data/default/user_logs/34cc2960ad21cb5f7cdc42ead0a23e32/info/077100f958304ef986784cb37e46a0e7
+-rw-r--r--   2 root supergroup    5686992 2026-10-18 16:40 /hbase/data/default/user_logs/34cc2960ad21cb5f7cdc42ead0a23e32/info/92cd0b997e6e42dea0671b2b2f4ec025
+== /hbase/data/default/user_logs/90a76e722d59709b441545f26655f9bb/info ==
+-rw-r--r--   2 root supergroup   14689145 2026-10-18 15:48 /hbase/data/default/user_logs/90a76e722d59709b441545f26655f9bb/info/5fd52a207e2e43a1962f74b6a7d77fde
+-rw-r--r--   2 root supergroup   11217980 2026-10-18 16:42 /hbase/data/default/user_logs/90a76e722d59709b441545f26655f9bb/info/aaf5ac620e764776ba157f4c2985a86b
+== /hbase/data/default/user_logs/92e9f733f2742f4ebbdd01a760c7e287/info ==
+-rw-r--r--   2 root supergroup   25835683 2026-10-18 16:43 /hbase/data/default/user_logs/92e9f733f2742f4ebbdd01a760c7e287/info/99c23c40b4304f42b8a918476bfa3a11
+== /hbase/data/default/user_logs/9a7fc7b6b720c7c2c7014888420a7a41/info ==
+-rw-r--r--   2 root supergroup    1431639 2026-10-18 16:42 /hbase/data/default/user_logs/9a7fc7b6b720c7c2c7014888420a7a41/info/38a693ad77534963b6f65887fd231ee5
+-rw-r--r--   2 root supergroup   24317993 2026-10-18 15:49 /hbase/data/default/user_logs/9a7fc7b6b720c7c2c7014888420a7a41/info/9083e67c5e794270b981454a9e10cb9e
+== /hbase/data/default/user_logs/a01b3f47ae2c1bbb70b6f5535f8e6eed/info ==
+-rw-r--r--   2 root supergroup    1009623 2026-10-18 16:43 /hbase/data/default/user_logs/a01b3f47ae2c1bbb70b6f5535f8e6eed/info/4f6fa8b0cb7c403688a0a06122d493a1
+-rw-r--r--   2 root supergroup   24739941 2026-10-18 15:48 /hbase/data/default/user_logs/a01b3f47ae2c1bbb70b6f5535f8e6eed/info/f85fc1478f0f47cfb204d824583c57d8
+== /hbase/data/default/user_logs/c12b94bd2b733b52516b871119176fb3/info ==
+-rw-r--r--   2 root supergroup   24106426 2026-10-18 15:49 /hbase/data/default/user_logs/c12b94bd2b733b52516b871119176fb3/info/8c0bd8b6bd21485d99cdd38587601bf4
+-rw-r--r--   2 root supergroup    1643155 2026-10-18 16:42 /hbase/data/default/user_logs/c12b94bd2b733b52516b871119176fb3/info/e8c8556883654af1940d56d4aa434c8b
+== /hbase/data/default/user_logs/d6b3b133a15a8f6bb4843ed87b16e562/info ==
+-rw-r--r--   2 root supergroup   11492020 2026-10-18 16:42 /hbase/data/default/user_logs/d6b3b133a15a8f6bb4843ed87b16e562/info/1d0e553368c04328a2f381f0e40ddc46
+-rw-r--r--   2 root supergroup   14314986 2026-10-18 15:48 /hbase/data/default/user_logs/d6b3b133a15a8f6bb4843ed87b16e562/info/bc5fcf88f6f243949c03d3b32ff06d0d
+== /hbase/data/default/user_logs/e3dbd15212c4820d2aaf34d056677a1c/info ==
+-rw-r--r--   2 root supergroup    5218261 2026-10-18 16:43 /hbase/data/default/user_logs/e3dbd15212c4820d2aaf34d056677a1c/info/70baf7d2a2774d0abecec582f3bf11f5
+-rw-r--r--   2 root supergroup   20656143 2026-10-18 15:48 /hbase/data/default/user_logs/e3dbd15212c4820d2aaf34d056677a1c/info/d6098acdbfc442fea6c150b8b82700a2
+== /hbase/data/default/user_logs/e9df73de3521dd93a3bcabb44338ec84/info ==
+-rw-r--r--   2 root supergroup   17106337 2026-10-18 15:48 /hbase/data/default/user_logs/e9df73de3521dd93a3bcabb44338ec84/info/8ab803b74ccb40ee938ba697646d1d0f
+-rw-r--r--   2 root supergroup    8700833 2026-10-18 16:41 /hbase/data/default/user_logs/e9df73de3521dd93a3bcabb44338ec84/info/e965e9f6b10c418c8af89a88ed0ad675
+== /hbase/data/default/user_logs/f112e60302be0b983e129bc093f21f33/info ==
+-rw-r--r--   2 root supergroup   14314986 2026-10-18 15:48 /hbase/data/default/user_logs/f112e60302be0b983e129bc093f21f33/info/0edf264d9b4a4f59bd6f55f2b7c5a102
+-rw-r--r--   2 root supergroup   11492030 2026-10-18 16:43 /hbase/data/default/user_logs/f112e60302be0b983e129bc093f21f33/info/ca95a27595a94eeb9da5e85aea471a1a
