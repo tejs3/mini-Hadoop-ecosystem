@@ -1,0 +1,189 @@
+=== PODS ===
+NAME     READY   STATUS    RESTARTS   AGE     IP            NODE                 NOMINATED NODE   READINESS GATES
+solr-0   1/1     Running   0          3d16h   10.244.2.34   hadoop-lab-worker2   <none>           <none>
+solr-1   1/1     Running   0          3d16h   10.244.1.28   hadoop-lab-worker    <none>           <none>
+=== CREATE ===
+{
+  "responseHeader":{
+    "status":400,
+    "QTime":571
+  },
+  "error":{
+    "metadata":["error-class","org.apache.solr.common.SolrException","root-error-class","org.apache.solr.common.SolrException"],
+    "msg":"Could not find collection : app_logs",
+    "code":400
+  }
+}
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":18655
+  },
+  "success":{
+    "solr-0.solr-hs.hadoop.svc.cluster.local:8983_solr":{
+      "responseHeader":{
+        "status":0,
+        "QTime":13779
+      },
+      "core":"app_logs_shard1_replica_n4"
+    },
+    "solr-0.solr-hs.hadoop.svc.cluster.local:8983_solr":{
+      "responseHeader":{
+        "status":0,
+        "QTime":13769
+      },
+      "core":"app_logs_shard2_replica_n6"
+    },
+    "solr-1.solr-hs.hadoop.svc.cluster.local:8983_solr":{
+      "responseHeader":{
+        "status":0,
+        "QTime":14022
+      },
+      "core":"app_logs_shard1_replica_n2"
+    },
+    "solr-1.solr-hs.hadoop.svc.cluster.local:8983_solr":{
+      "responseHeader":{
+        "status":0,
+        "QTime":14037
+      },
+      "core":"app_logs_shard2_replica_n1"
+    }
+  },
+  "warning":"Using _default configset. Data driven schema functionality is enabled by default, which is NOT RECOMMENDED for production use. To turn it off: curl http://{host:port}/solr/app_logs/config -d '{\"set-user-property\": {\"update.autoCreateFields\":\"false\"}}'"
+}
+=== SCHEMA ===
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":6983
+  }
+}
+=== FIELDS ===
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":4
+  },
+  "fields":[{
+    "name":"_nest_path_",
+    "type":"_nest_path_"
+  },{
+    "name":"_root_",
+    "type":"string",
+    "indexed":true,
+    "stored":false
+  },{
+    "name":"_text_",
+    "type":"text_general",
+    "multiValued":true,
+    "indexed":true,
+    "stored":false
+  },{
+    "name":"_version_",
+    "type":"plong",
+    "indexed":false,
+    "stored":false
+  },{
+    "name":"id",
+    "type":"string",
+    "multiValued":false,
+    "indexed":true,
+    "required":true,
+    "stored":true
+  },{
+    "name":"level",
+    "type":"string",
+    "docValues":true,
+    "indexed":true,
+    "stored":true
+  },{
+    "name":"message",
+    "type":"text_general",
+    "indexed":true,
+    "stored":true
+  },{
+    "name":"timestamp",
+    "type":"pdate",
+    "docValues":true,
+    "indexed":true,
+    "stored":true
+  }]
+}
+=== CLUSTER ===
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":18
+  },
+  "cluster":{
+    "live_nodes":["solr-0.solr-hs.hadoop.svc.cluster.local:8983_solr","solr-1.solr-hs.hadoop.svc.cluster.local:8983_solr"],
+    "collections":{
+      "app_logs":{
+        "pullReplicas":"0",
+        "configName":"app_logs.AUTOCREATED",
+        "replicationFactor":2,
+        "router":{
+          "name":"compositeId"
+        },
+        "nrtReplicas":2,
+        "tlogReplicas":"0",
+        "shards":{
+          "shard1":{
+            "range":"80000000-ffffffff",
+            "state":"active",
+            "replicas":{
+              "core_node5":{
+                "core":"app_logs_shard1_replica_n2",
+                "node_name":"solr-1.solr-hs.hadoop.svc.cluster.local:8983_solr",
+                "type":"NRT",
+                "state":"active",
+                "force_set_state":"false",
+                "base_url":"http://solr-1.solr-hs.hadoop.svc.cluster.local:8983/solr"
+              },
+              "core_node7":{
+                "core":"app_logs_shard1_replica_n4",
+                "node_name":"solr-0.solr-hs.hadoop.svc.cluster.local:8983_solr",
+                "type":"NRT",
+                "state":"active",
+                "leader":"true",
+                "force_set_state":"false",
+                "base_url":"http://solr-0.solr-hs.hadoop.svc.cluster.local:8983/solr"
+              }
+            },
+            "health":"GREEN"
+          },
+          "shard2":{
+            "range":"0-7fffffff",
+            "state":"active",
+            "replicas":{
+              "core_node3":{
+                "core":"app_logs_shard2_replica_n1",
+                "node_name":"solr-1.solr-hs.hadoop.svc.cluster.local:8983_solr",
+                "type":"NRT",
+                "state":"active",
+                "force_set_state":"false",
+                "base_url":"http://solr-1.solr-hs.hadoop.svc.cluster.local:8983/solr"
+              },
+              "core_node8":{
+                "core":"app_logs_shard2_replica_n6",
+                "node_name":"solr-0.solr-hs.hadoop.svc.cluster.local:8983_solr",
+                "type":"NRT",
+                "state":"active",
+                "leader":"true",
+                "force_set_state":"false",
+                "base_url":"http://solr-0.solr-hs.hadoop.svc.cluster.local:8983/solr"
+              }
+            },
+            "health":"GREEN"
+          }
+        },
+        "health":"GREEN",
+        "znodeVersion":7,
+        "creationTimeMillis":1792393213100
+      }
+    },
+    "properties":{ },
+    "roles":{ }
+  }
+}
+CREATE_DONE

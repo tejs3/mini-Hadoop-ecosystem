@@ -1,0 +1,29 @@
+sent 2000
+sent 4000
+sent 6000
+sent 8000
+sent 10000
+sent 12000
+sent 14000
+sent 16000
+sent 18000
+sent 20000
+sent 22000
+sent 24000
+sent 26000
+sent 28000
+sent 30000
+sent 32000
+sent 34000
+sent 36000
+sent 38000
+sent 40000
+sent 42000
+sent 44000
+sent 46000
+sent 48000
+sent 50000
+RESULT indexed=50000 seconds=90.7 url=http://127.0.0.1:8983/solr/app_logs
+NOW 2026-10-19T07:01:18Z
+INDEX_EXIT:0
+QUERY_DONE

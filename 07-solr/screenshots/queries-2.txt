@@ -1,0 +1,155 @@
+===== time-range-in-q =====
+{
+  "responseHeader":{
+    "zkConnected":true,
+    "status":0,
+    "QTime":27,
+    "params":{
+      "q":"timestamp:[NOW-7DAYS TO NOW]",
+      "rows":"0",
+      "wt":"json"
+    }
+  },
+  "response":{
+    "numFound":20000,
+    "start":0,
+    "maxScore":1.0,
+    "numFoundExact":true,
+    "docs":[ ]
+  }
+}
+===== time-range-in-fq =====
+{
+  "responseHeader":{
+    "zkConnected":true,
+    "status":0,
+    "QTime":49,
+    "params":{
+      "q":"*:*",
+      "fq":"timestamp:[NOW-7DAYS TO NOW]",
+      "rows":"0",
+      "wt":"json"
+    }
+  },
+  "response":{
+    "numFound":20000,
+    "start":0,
+    "maxScore":1.0,
+    "numFoundExact":true,
+    "docs":[ ]
+  }
+}
+===== message-timeout =====
+{
+  "responseHeader":{
+    "zkConnected":true,
+    "status":0,
+    "QTime":135,
+    "params":{
+      "q":"message:timeout",
+      "fl":"id,level,timestamp,message",
+      "rows":"2",
+      "wt":"json"
+    }
+  },
+  "response":{
+    "numFound":10000,
+    "start":0,
+    "maxScore":0.6996292,
+    "numFoundExact":true,
+    "docs":[{
+      "id":"log-015345",
+      "timestamp":"2026-09-30T06:18:50Z",
+      "level":"INFO",
+      "message":"connection timeout while talking to broker 0"
+    },{
+      "id":"log-015355",
+      "timestamp":"2026-09-20T06:08:50Z",
+      "level":"INFO",
+      "message":"connection timeout while talking to broker 1"
+    }]
+  }
+}
+===== message-leading-wildcard =====
+{
+  "responseHeader":{
+    "zkConnected":true,
+    "status":0,
+    "QTime":58,
+    "params":{
+      "q":"message:*timeout*",
+      "rows":"0",
+      "wt":"json"
+    }
+  },
+  "response":{
+    "numFound":10000,
+    "start":0,
+    "maxScore":1.0,
+    "numFoundExact":true,
+    "docs":[ ]
+  }
+}
+===== facet-level =====
+{
+  "responseHeader":{
+    "zkConnected":true,
+    "status":0,
+    "QTime":56,
+    "params":{
+      "q":"*:*",
+      "facet.field":"level",
+      "rows":"0",
+      "facet":"true",
+      "wt":"json"
+    }
+  },
+  "response":{
+    "numFound":50000,
+    "start":0,
+    "maxScore":1.0,
+    "numFoundExact":true,
+    "docs":[ ]
+  },
+  "facet_counts":{
+    "facet_queries":{ },
+    "facet_fields":{
+      "level":["INFO",40000,"ERROR",5000,"WARN",5000]
+    },
+    "facet_ranges":{ },
+    "facet_intervals":{ },
+    "facet_heatmaps":{ }
+  }
+}
+===== facet-level-enum =====
+{
+  "responseHeader":{
+    "zkConnected":true,
+    "status":0,
+    "QTime":44,
+    "params":{
+      "q":"*:*",
+      "facet.field":"level",
+      "facet.method":"enum",
+      "rows":"0",
+      "facet":"true",
+      "wt":"json"
+    }
+  },
+  "response":{
+    "numFound":50000,
+    "start":0,
+    "maxScore":1.0,
+    "numFoundExact":true,
+    "docs":[ ]
+  },
+  "facet_counts":{
+    "facet_queries":{ },
+    "facet_fields":{
+      "level":["INFO",40000,"ERROR",5000,"WARN",5000]
+    },
+    "facet_ranges":{ },
+    "facet_intervals":{ },
+    "facet_heatmaps":{ }
+  }
+}

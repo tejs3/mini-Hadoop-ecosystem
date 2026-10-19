@@ -1,0 +1,33 @@
+{
+  "add-field": [
+    {
+      "name": "id",
+      "type": "string",
+      "indexed": true,
+      "stored": true,
+      "required": true,
+      "multiValued": false
+    },
+    {
+      "name": "timestamp",
+      "type": "pdate",
+      "indexed": true,
+      "stored": true,
+      "docValues": true
+    },
+    {
+      "name": "level",
+      "type": "string",
+      "indexed": true,
+      "stored": true,
+      "docValues": true
+    },
+    {
+      "name": "message",
+      "type": "text_general",
+      "indexed": true,
+      "stored": true,
+      "multiValued": false
+    }
+  ]
+}
