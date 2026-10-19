@@ -1,0 +1,4 @@
+hbase:001:0> status
+1 active master, 0 backup masters, 0 servers, 0 dead, 0.0000 average load
+Took 3.5284 seconds
+hbase:002:0> 
