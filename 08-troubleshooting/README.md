@@ -10,4 +10,4 @@ Written answers for the three scenarios in the assignment:
 
 Open [Part8-Troubleshooting.pdf](Part8-Troubleshooting.pdf).
 
-The issues I actually hit on this cluster (Solr crash loop, ResourceManager OOM, hbck2 classpath, replication, and the rest) are listed in [TROUBLESHOOTING.md](../TROUBLESHOOTING.md) at the submission root.
+
