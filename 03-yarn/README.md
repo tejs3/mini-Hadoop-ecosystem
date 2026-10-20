@@ -4,7 +4,7 @@ Two queues: `production` 60% capacity, max 80%, and `development` 40% capacity, 
 
 ## Documentation
 
-Open [Part3-YARN-Capacity-Scheduler.docx](Part3-YARN-Capacity-Scheduler.docx). The UI screenshots are inside that file.
+Open [Part3-YARN-Capacity-Scheduler.pdf](Part3-YARN-Capacity-Scheduler.pdf). The UI screenshots are inside that file.
 
 ## Config
 
