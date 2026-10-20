@@ -7,7 +7,7 @@ Two kinds of folders sit next to each other:
 | Folder | What you open it for |
 |--------|----------------------|
 | [`hadoop-lab/`](hadoop-lab/README.md) | The files that run the cluster. Copied from `/opt/hadoop-lab` on the lab VM. Each service has `conf/`, `manifests/`, and `scripts/`. |
-| `01-environment/` … `08-troubleshooting/` | The assignment write-up for that part. The Word file is the lab notes, with the commands and screenshots. The short `README.md` in the same folder says which file to open. |
+| `01-environment/` … `08-troubleshooting/` | The assignment write-up for that part. The PDF is the report, with the commands and screenshots. The short `README.md` in the same folder says which file to open. |
 
 Lab host: `10.1.0.213` (`alphtatalakehouse6`). Kind cluster name: `hadoop-lab`. Kubernetes namespace: `hadoop`.
 
@@ -101,18 +101,18 @@ Each service also has a `Dockerfile` (`FROM` the official image) in its folder.
 
 ## What the documentation contains
 
-Open the Word file. The `README.md` beside it is only a pointer.
+Open the PDF. The `README.md` beside it is only a pointer. The Word file is the same report, kept next to the PDF.
 
-| Part | Write-up | What is inside |
-|------|----------|----------------|
-| 1. Environment | [01-environment/Part1-Lab-Notes.docx](01-environment/Part1-Lab-Notes.docx) | Docker, kubectl, Kind, and bringing up HDFS, YARN, ZooKeeper, Kafka, HBase, and Solr. Markdown copies are in the same folder. Screenshots in `01-environment/screenshots/` show the cluster, the HDFS report, YARN nodes, ZooKeeper `ruok`, Kafka brokers, HBase, and Solr. |
-| 2. HDFS | [02-hdfs/Part2-HDFS-Administration.docx](02-hdfs/Part2-HDFS-Administration.docx) | Upload of the NYC yellow taxi parquet, replication 3 on `/datasets/nyc-taxi`, a DataNode failure and how the blocks came back, the balancer, and a snapshot. The 14 screenshots are in the document and in `02-hdfs/screenshots/`. |
-| 3. YARN | [03-yarn/Part3-YARN-Capacity-Scheduler.docx](03-yarn/Part3-YARN-Capacity-Scheduler.docx) | The two queues, WordCount on `production`, a second job on `development`, the ResourceManager UI, and preemption. |
-| 4. Spark | [04-spark/Part4-Spark-on-YARN.docx](04-spark/Part4-Spark-on-YARN.docx) | GroupBy of the taxi data back to HDFS as Parquet, executor 1 GB, driver 512 MB, dynamic allocation, then the skewed join and the salt fix. History Server screenshots are in `04-spark/screenshots/`. |
-| 5. Kafka | [05-kafka/Part5-Kafka-Administration.docx](05-kafka/Part5-Kafka-Administration.docx) | Topic `app-events` (6 partitions, replication 3), 100,000 messages, consumer lag, killing a broker, and the partition reassignment. CLI figures are in `05-kafka/screenshots/`. |
-| 6. HBase | [06-hbase/Part6-HBase-Administration.docx](06-hbase/Part6-HBase-Administration.docx) | Table `user_logs`, the salted row key, the 10 pre-split regions, the 1,000,000-row load, major compaction, and hbck2. |
-| 7. Solr | [07-solr/Part7-Solr-Administration.docx](07-solr/Part7-Solr-Administration.docx) | Collection `app_logs` with 2 shards and 2 replicas, the schema (`timestamp` is `DatePointField`), 50,000 documents, and the time-range, full-text, and facet queries with timings. |
-| 8. Written scenarios | [08-troubleshooting/Part8-Troubleshooting.docx](08-troubleshooting/Part8-Troubleshooting.docx) | NameNode safe mode, Spark streaming lag while tasks still finish, and a rolling upgrade from Hadoop 3.3.4 to 3.3.6. |
+| Part | Report | What is inside |
+|------|--------|----------------|
+| 1. Environment | [01-environment/Part1-Lab-Notes.pdf](01-environment/Part1-Lab-Notes.pdf) | Docker, kubectl, Kind, and bringing up HDFS, YARN, ZooKeeper, Kafka, HBase, and Solr. Markdown copies are in the same folder. Screenshots in `01-environment/screenshots/` show the cluster, the HDFS report, YARN nodes, ZooKeeper `ruok`, Kafka brokers, HBase, and Solr. |
+| 2. HDFS | [02-hdfs/Part2-HDFS-Administration.pdf](02-hdfs/Part2-HDFS-Administration.pdf) | Upload of the NYC yellow taxi parquet, replication 3 on `/datasets/nyc-taxi`, a DataNode failure and how the blocks came back, the balancer, and a snapshot. The 14 screenshots are in the document and in `02-hdfs/screenshots/`. |
+| 3. YARN | [03-yarn/Part3-YARN-Capacity-Scheduler.pdf](03-yarn/Part3-YARN-Capacity-Scheduler.pdf) | The two queues, WordCount on `production`, a second job on `development`, the ResourceManager UI, and preemption. |
+| 4. Spark | [04-spark/Part4-Spark-on-YARN.pdf](04-spark/Part4-Spark-on-YARN.pdf) | GroupBy of the taxi data back to HDFS as Parquet, executor 1 GB, driver 512 MB, dynamic allocation, then the skewed join and the salt fix. History Server screenshots are in `04-spark/screenshots/`. |
+| 5. Kafka | [05-kafka/Part5-Kafka-Administration.pdf](05-kafka/Part5-Kafka-Administration.pdf) | Topic `app-events` (6 partitions, replication 3), 100,000 messages, consumer lag, killing a broker, and the partition reassignment. CLI figures are in `05-kafka/screenshots/`. |
+| 6. HBase | [06-hbase/Part6-HBase-Administration.pdf](06-hbase/Part6-HBase-Administration.pdf) | Table `user_logs`, the salted row key, the 10 pre-split regions, the 1,000,000-row load, major compaction, and hbck2. |
+| 7. Solr | [07-solr/Part7-Solr-Administration.pdf](07-solr/Part7-Solr-Administration.pdf) | Collection `app_logs` with 2 shards and 2 replicas, the schema (`timestamp` is `DatePointField`), 50,000 documents, and the time-range, full-text, and facet queries with timings. |
+| 8. Written scenarios | [08-troubleshooting/Part8-Troubleshooting.pdf](08-troubleshooting/Part8-Troubleshooting.pdf) | NameNode safe mode, Spark streaming lag while tasks still finish, and a rolling upgrade from Hadoop 3.3.4 to 3.3.6. |
 
 The full bring-up guide (install commands, image list, DNS names, and the file map) is [hadoop-lab/README.md](hadoop-lab/README.md).
 
@@ -143,4 +143,8 @@ Expected: 1 NameNode, 3 DataNodes, 1 ResourceManager, 2 NodeManagers, 3 ZooKeepe
 
 The taxi parquet files stayed on the VM at `/opt/hadoop-lab/hdfs/data/`. February through June are each over 100 MB, which GitHub rejects. [hadoop-lab/hdfs/data/README.md](hadoop-lab/hdfs/data/README.md) names the files. January is truncated and was not loaded.
 
+## Troubleshooting
 
+Problems hit while building and running this cluster, and how each one was fixed, are in [TROUBLESHOOTING.md](TROUBLESHOOTING.md). That list includes the Solr crash on start, the ResourceManager OOM, HDFS replication, and the hbck2 classpath error.
+
+Part 8 is a separate written exercise. It is [08-troubleshooting/Part8-Troubleshooting.pdf](08-troubleshooting/Part8-Troubleshooting.pdf), not the same file as `TROUBLESHOOTING.md`.
