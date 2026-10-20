@@ -4,7 +4,7 @@ SolrCloud collection `app_logs`, 2 shards, 2 replicas, schema for id / timestamp
 
 ## Documentation
 
-Open [Part7-Solr-Administration.docx](Part7-Solr-Administration.docx). Admin UI screenshots and CLI timings are in that file and in `screenshots/`.
+Open [Part7-Solr-Administration.pdf](Part7-Solr-Administration.pdf). Admin UI screenshots and CLI timings are in that file and in `screenshots/`.
 
 ## Scripts
 
