@@ -4,7 +4,7 @@ Topic `app-events`, 6 partitions, replication factor 3, `min.insync.replicas=2`.
 
 ## Documentation
 
-Open [Part5-Kafka-Administration.docx](Part5-Kafka-Administration.docx). CLI figures are in the document and in `screenshots/`. Raw command output is in `screenshots/raw/`.
+Open [Part5-Kafka-Administration.pdf](Part5-Kafka-Administration.pdf). CLI figures are in the document and in `screenshots/`. Raw command output is in `screenshots/raw/`.
 
 ## Scripts
 
