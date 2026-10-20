@@ -4,7 +4,7 @@ NYC yellow taxi parquet (Feb–Jun 2019) on HDFS, replication 3 on `/datasets/ny
 
 ## Documentation
 
-Open [Part2-HDFS-Administration.docx](Part2-HDFS-Administration.docx). The screenshots sit next to the explanation inside that file. The same PNG files are in `screenshots/`.
+Open [Part2-HDFS-Administration.pdf](Part2-HDFS-Administration.pdf). The screenshots sit next to the explanation inside that file. The same PNG files are in `screenshots/`.
 
 ## Data
 
