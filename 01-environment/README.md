@@ -6,7 +6,7 @@ Kind cluster `hadoop-lab` on the lab VM, namespace `hadoop`. HDFS, YARN, ZooKeep
 
 | File | What it is |
 |------|------------|
-| [Part1-Lab-Notes.docx](Part1-Lab-Notes.docx) | The write-up with the steps I ran |
+| [Part1-Lab-Notes.pdf](Part1-Lab-Notes.pdf) | The report, with the steps I ran |
 | [PART1-Lab-Notes.md](PART1-Lab-Notes.md) | Same notes in Markdown |
 | [PART1-Environment-Setup.md](PART1-Environment-Setup.md) | Setup notes with the interview-style explanation of each step |
 
