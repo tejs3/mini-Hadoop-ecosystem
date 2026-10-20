@@ -4,7 +4,7 @@ Spark 3.5.5 in cluster mode on YARN. GroupBy of the taxi parquet written back to
 
 ## Documentation
 
-Open [Part4-Spark-on-YARN.docx](Part4-Spark-on-YARN.docx). History Server screenshots are in the document and in `screenshots/`.
+Open [Part4-Spark-on-YARN.pdf](Part4-Spark-on-YARN.pdf). History Server screenshots are in the document and in `screenshots/`.
 
 ## Scripts
 
