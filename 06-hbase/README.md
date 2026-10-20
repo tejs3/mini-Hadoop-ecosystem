@@ -4,7 +4,7 @@ Table `user_logs`, column family `info`, 10 pre-split regions, salted row key, 1
 
 ## Documentation
 
-Open [Part6-HBase-Administration.docx](Part6-HBase-Administration.docx). The pre-split command and `major_compact 'user_logs'` are in that file. CLI figures are also in `screenshots/`.
+Open [Part6-HBase-Administration.pdf](Part6-HBase-Administration.pdf). The pre-split command and `major_compact 'user_logs'` are in that file. CLI figures are also in `screenshots/`.
 
 ## Scripts
 
