@@ -1,0 +1,7 @@
+{
+  "add-field": [
+    {"name": "timestamp", "type": "pdate", "indexed": true, "stored": true, "docValues": true},
+    {"name": "level", "type": "string", "indexed": true, "stored": true, "docValues": true},
+    {"name": "message", "type": "text_general", "indexed": true, "stored": true, "multiValued": false}
+  ]
+}
