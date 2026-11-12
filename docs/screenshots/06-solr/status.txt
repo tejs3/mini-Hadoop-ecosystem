@@ -1,0 +1,16 @@
+===== solr status =====
+NAME     READY   STATUS    RESTARTS   AGE    IP            NODE                 NOMINATED NODE   READINESS GATES
+solr-0   1/1     Running   0          5m7s   10.244.2.34   hadoop-lab-worker2   <none>           <none>
+solr-1   1/1     Running   0          4m2s   10.244.1.28   hadoop-lab-worker    <none>           <none>
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":67
+  },
+  "cluster":{
+    "live_nodes":["solr-0.solr-hs.hadoop.svc.cluster.local:8983_solr","solr-1.solr-hs.hadoop.svc.cluster.local:8983_solr"],
+    "collections":{ },
+    "properties":{ },
+    "roles":{ }
+  }
+}

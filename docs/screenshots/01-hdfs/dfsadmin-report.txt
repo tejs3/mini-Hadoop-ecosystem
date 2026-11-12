@@ -1,0 +1,63 @@
+===== hdfs dfsadmin -report =====
+Configured Capacity: 131357212672 (122.34 GB)
+Present Capacity: 71162984862 (66.28 GB)
+DFS Remaining: 71159505906 (66.27 GB)
+DFS Used: 3478956 (3.32 MB)
+DFS Used%: 0.00%
+Replicated Blocks:
+	Under replicated blocks: 6
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (2):
+
+Name: 10.244.1.10:9866 (datanode-1.datanode.hadoop.svc.cluster.local)
+Hostname: datanode-1.datanode.hadoop.svc.cluster.local
+Decommission Status : Normal
+Configured Capacity: 65678606336 (61.17 GB)
+DFS Used: 1739478 (1.66 MB)
+Non DFS Used: 29962896682 (27.91 GB)
+DFS Remaining: 35579752953 (33.14 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 54.17%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 2
+Last contact: Thu Oct 15 14:31:40 UTC 2026
+Last Block Report: Thu Oct 15 12:19:29 UTC 2026
+Num of Blocks: 23
+
+
+Name: 10.244.2.6:9866 (datanode-0.datanode.hadoop.svc.cluster.local)
+Hostname: datanode-0.datanode.hadoop.svc.cluster.local
+Decommission Status : Normal
+Configured Capacity: 65678606336 (61.17 GB)
+DFS Used: 1739478 (1.66 MB)
+Non DFS Used: 29962896682 (27.91 GB)
+DFS Remaining: 35579752953 (33.14 GB)
+DFS Used%: 0.00%
+DFS Remaining%: 54.17%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 2
+Last contact: Thu Oct 15 14:31:43 UTC 2026
+Last Block Report: Thu Oct 15 11:05:19 UTC 2026
+Num of Blocks: 23
+
+

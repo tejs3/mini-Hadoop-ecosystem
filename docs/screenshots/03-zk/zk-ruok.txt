@@ -1,0 +1,4 @@
+===== zookeeper ruok =====
+zk-0: imok
+zk-1: imok
+zk-2: imok

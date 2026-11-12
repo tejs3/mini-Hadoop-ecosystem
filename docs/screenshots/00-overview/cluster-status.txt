@@ -1,0 +1,37 @@
+===== kubectl get pods -n hadoop -o wide =====
+NAME                               READY   STATUS      RESTARTS     AGE     IP            NODE                 NOMINATED NODE   READINESS GATES
+datanode-0                         1/1     Running     0            21h     10.244.2.6    hadoop-lab-worker2   <none>           <none>
+datanode-1                         1/1     Running     0            21h     10.244.1.10   hadoop-lab-worker    <none>           <none>
+hbase-master-77c899f866-545d5      1/1     Running     0            3m20s   10.244.2.32   hadoop-lab-worker2   <none>           <none>
+hbase-rs-0                         1/1     Running     0            3m20s   10.244.1.26   hadoop-lab-worker    <none>           <none>
+hbase-rs-1                         1/1     Running     0            3m19s   10.244.2.33   hadoop-lab-worker2   <none>           <none>
+jobhistory-6c4f75fd9d-5vflh        1/1     Running     0            11h     10.244.2.10   hadoop-lab-worker2   <none>           <none>
+kafka-0                            1/1     Running     0            14m     10.244.2.25   hadoop-lab-worker2   <none>           <none>
+kafka-1                            1/1     Running     0            14m     10.244.1.23   hadoop-lab-worker    <none>           <none>
+kafka-2                            1/1     Running     0            14m     10.244.2.26   hadoop-lab-worker2   <none>           <none>
+namenode-0                         1/1     Running     0            21h     10.244.1.9    hadoop-lab-worker    <none>           <none>
+nodemanager-dfbcdcdbc-dzg7m        1/1     Running     0            9h      10.244.2.16   hadoop-lab-worker2   <none>           <none>
+nodemanager-dfbcdcdbc-v9fsr        1/1     Running     0            9h      10.244.1.18   hadoop-lab-worker    <none>           <none>
+pvc-debug                          0/1     Completed   0            22h     10.244.2.4    hadoop-lab-worker2   <none>           <none>
+pvc-debug-1                        0/1     Completed   0            21h     10.244.1.7    hadoop-lab-worker    <none>           <none>
+resourcemanager-76c7b7d9bc-nbrgh   1/1     Running     1 (9h ago)   11h     10.244.1.12   hadoop-lab-worker    <none>           <none>
+solr-0                             1/1     Running     0            3m15s   10.244.2.34   hadoop-lab-worker2   <none>           <none>
+solr-1                             1/1     Running     0            2m10s   10.244.1.28   hadoop-lab-worker    <none>           <none>
+zk-0                               1/1     Running     0            15m     10.244.2.21   hadoop-lab-worker2   <none>           <none>
+zk-1                               1/1     Running     0            15m     10.244.2.22   hadoop-lab-worker2   <none>           <none>
+zk-2                               1/1     Running     0            15m     10.244.1.21   hadoop-lab-worker    <none>           <none>
+
+===== kubectl get svc -n hadoop =====
+NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                               AGE
+datanode          ClusterIP   None            <none>        9866/TCP,9864/TCP                     23h
+hbase-master      ClusterIP   10.96.47.21     <none>        16000/TCP,16010/TCP                   13m
+hbase-rs          ClusterIP   None            <none>        16020/TCP,16030/TCP                   13m
+jobhistory        ClusterIP   10.96.114.145   <none>        10020/TCP,19888/TCP                   11h
+kafka             ClusterIP   10.96.248.84    <none>        9092/TCP                              14m
+kafka-hs          ClusterIP   None            <none>        9092/TCP                              14m
+namenode          ClusterIP   10.96.60.12     <none>        9000/TCP,9870/TCP                     23h
+resourcemanager   ClusterIP   10.96.158.157   <none>        8032/TCP,8030/TCP,8031/TCP,8088/TCP   11h
+solr              ClusterIP   10.96.34.104    <none>        8983/TCP                              13m
+solr-hs           ClusterIP   None            <none>        8983/TCP                              13m
+zk-hs             ClusterIP   None            <none>        2181/TCP,2888/TCP,3888/TCP            15m
+zookeeper         ClusterIP   10.96.202.67    <none>        2181/TCP                              15m
